@@ -1,2 +1,1 @@
-# code-js
-this is a repo for code of java script 
+This is the code for the model 
