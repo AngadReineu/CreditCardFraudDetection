@@ -1,0 +1,115 @@
+for form input handling
+
+
+function forms(){
+
+const[nameValue, setNameValue] = useState('');
+
+const handleFormInput = (event)=>{
+
+const {value} = event.target;
+setNameValue(value) || setNameValue(event.target.value)
+
+
+}
+return <div>
+<h1>hello</h1>
+<input placeholder="enter Value", name="name" id="name" value={nameValue} onChange={handleFormInput}  />
+</div>
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const[nameValue, setNameValue] = useState('');
+const [emailValue,setEmailValue] = useState('');
+
+const handleFormInput = (event)=>{
+
+const {value} = event.target;
+setNameValue(value) || setNameValue(event.target.value)
+
+}
+
+function handleEmailChange(event){
+const {value} = event.target;
+onEmailChange(value)
+}
+
+function handleFormSubmit(event){
+event.preventDefault();
+// api call karo and store kar wao
+
+console.log(nameValue,emailValue,"namevalue")
+
+}
+
+
+
+return <div>
+<h1>hello</h1>
+<form onSubmit={handleFormSubmit}>
+<input placeholder="enter Value" name="name" id="name" value={nameValue} onChange={handleFormInput}  />
+<input placeholder = 'enter email' name="email" id="email" value={emailValue} onChange={handleEmailChange}/>
+<button type="submit"> Submit</button>
+</form>
+
+</div>
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+const[nameValue, setNameValue] = useState('');
+const [emailValue,setEmailValue] = useState('');
+const [formData,setFormData] = useState({
+name : '',
+email: '',
+})
+
+const handleFormInput = (event)=>{
+
+const {value} = event.target;
+setNameValue(value) || setNameValue(event.target.value)
+
+}
+
+function handleEmailChange(event){
+const {value} = event.target;
+onEmailChange(value)
+}
+
+function handleFormSubmit(event){
+event.preventDefault();
+// api call karo and store kar wao
+
+console.log(nameValue,emailValue,"namevalue")
+
+}
+#####################################imp#########################################
+function handleFormData(event){
+const {name,value} = event.target;
+setFormData({
+...formData,
+[name]:value
+})
+}
+
+
+
+return <div>
+<h1>hello</h1>
+<form onSubmit={handleFormSubmit}>
+<input placeholder="enter Value" name="name" id="name" value={formData.name} onChange={handleFormData}  />
+<input placeholder = 'enter email' name="email" id="email" value={formData.email} onChange={handleFormData}/>
+<button type="submit"> Submit</button>
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+}
